@@ -3,7 +3,7 @@ import React from "react";
 // components import quote? https://zenquotes.io/api/random
 
 import CardStats from "components/Cards/CardStats.js";
-import TutorialNavBar from "components/Navbars/TutorialNavbar.js";
+import TutorialNavBar from "components/Navbars/TutorialNavBar.js";
 
 export default function HeaderStats() {
   return (
