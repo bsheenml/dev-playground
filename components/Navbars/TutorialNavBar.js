@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import TutorialDropdown from "components/Dropdowns/TutorialDropdown.js";
 
-export default function TutorialNavbar(props) {
+export default function TutorialNavBar(props) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
     <>
