@@ -1,6 +1,6 @@
 import React from "react";
 
-// components import quote? https://zenquotes.io/api/random
+// components
 
 import CardStats from "components/Cards/CardStats.js";
 

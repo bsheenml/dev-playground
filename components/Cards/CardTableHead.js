@@ -17,48 +17,12 @@ function convertUnixTime(unix) {
   return `${month} ${date}, ${year}, ${hour}:${min}:${sec}`;
 }
 
-export default function CardTable({ posts },{ color }) {
-  const resultArr = posts.results;
+export default function CardTableHead({ posts },{ color }) {
+  
   color = 'light'
   console.log(posts);
-  const Rows = resultArr.slice(10,20).map((d) => {
-    return (
 
-      <tr>
-        <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
-          <img
-            src={d.values.tutorial_provider_logo}
-            className="h-8 w-8 bg-white rounded-full border"
-            alt="..."
-          ></img>{" "}
-          <span
-            className={
-              "ml-3 font-bold " +
-              +(color === "light" ? "text-blueGray-600" : "text-white")
-            }
-          >
-            {d.values.tutorial_name}
-          </span>
-        </th>
-        <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-          {d.values.tutorial_provider}
-        </td>
-        <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-          <i className="fas fa-circle text-orange-500 mr-2"></i> {new Date(d.values.tutorial_publish_date).toLocaleDateString("en-US")}
-        </td>
-        <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
-          aaa
-        </td>
-        
-
-        <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
-          <TableDropdown />
-        </td>
-      </tr>
-      
-      
-    );
-  });
+  
   return (
     <>
       <div
@@ -147,7 +111,9 @@ export default function CardTable({ posts },{ color }) {
               </tr>
             </thead>
             <tbody>
-              {Rows}
+              <tr>
+                <td>aaa</td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -156,10 +122,10 @@ export default function CardTable({ posts },{ color }) {
   );
 }
 
-CardTable.defaultProps = {
+CardTableHead.defaultProps = {
   color: "light",
 };
 
-CardTable.propTypes = {
+CardTableHead.propTypes = {
   color: PropTypes.oneOf(["light", "dark"]),
 };

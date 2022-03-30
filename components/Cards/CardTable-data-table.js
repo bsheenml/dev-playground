@@ -19,16 +19,15 @@ function convertUnixTime(unix) {
 
 export default function CardTable({ posts },{ color }) {
   const resultArr = posts.results;
-  color = 'light'
   console.log(posts);
-  const Rows = resultArr.slice(10,20).map((d) => {
+  const Rows = resultArr.map((d) => {
     return (
 
       <tr>
         <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
           <img
-            src={d.values.tutorial_provider_logo}
-            className="h-8 w-8 bg-white rounded-full border"
+            src="/img/bootstrap.jpg"
+            className="h-12 w-12 bg-white rounded-full border"
             alt="..."
           ></img>{" "}
           <span
@@ -46,11 +45,50 @@ export default function CardTable({ posts },{ color }) {
         <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
           <i className="fas fa-circle text-orange-500 mr-2"></i> {new Date(d.values.tutorial_publish_date).toLocaleDateString("en-US")}
         </td>
-        <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
-          aaa
+        <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+          <div className="flex">
+            <img
+              src="/img/team-1-800x800.jpg"
+              alt="..."
+              className="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow"
+            ></img>
+            <img
+              src="/img/team-2-800x800.jpg"
+              alt="..."
+              className="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
+            ></img>
+            <img
+              src="/img/team-3-800x800.jpg"
+              alt="..."
+              className="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
+            ></img>
+            <img
+              src="/img/team-4-470x470.png"
+              alt="..."
+              className="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
+            ></img>
+          </div>
         </td>
-        
-
+        <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+        <div class="flex flex-wrap">
+          <div class="w-full text-center">
+            <button class="bg-amber-500 text-white active:bg-amber-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" onmouseenter="toggleTooltip(event,'bottom','popover-id-bottom-amber')" onmouseleave="toggleTooltip(event,'bottom','popover-id-bottom-amber')">
+             popperjs
+            </button>
+            <div class="hidden bg-amber-600 border-0 mr-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg" id="popover-id-bottom-amber">
+              <div>
+                <div class="bg-amber-600 text-white opacity-75 font-semibold p-3 mb-0 border-b border-solid border-blueGray-100 uppercase rounded-t-lg">
+                  amber tooltip title
+                </div>
+                <div class="text-white p-3">
+                  And here's some amazing content. It's very engaging. Right?
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script src="https://unpkg.com/@popperjs/core@2" charSet="utf-8"></script>
+        </td>
         <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
           <TableDropdown />
         </td>
@@ -76,7 +114,7 @@ export default function CardTable({ posts },{ color }) {
                   (color === "light" ? "text-blueGray-700" : "text-white")
                 }
               >
-                Popular Tutorials
+                Card Tables
               </h3>
             </div>
           </div>
@@ -94,7 +132,7 @@ export default function CardTable({ posts },{ color }) {
                       : "bg-blueGray-600 text-blueGray-200 border-blueGray-500")
                   }
                 >
-                  Title
+                  Project
                 </th>
                 <th
                   className={
@@ -104,7 +142,7 @@ export default function CardTable({ posts },{ color }) {
                       : "bg-blueGray-600 text-blueGray-200 border-blueGray-500")
                   }
                 >
-                  Provider
+                  Budget
                 </th>
                 <th
                   className={
@@ -114,7 +152,7 @@ export default function CardTable({ posts },{ color }) {
                       : "bg-blueGray-600 text-blueGray-200 border-blueGray-500")
                   }
                 >
-                  Publish Date
+                  Status
                 </th>
                 <th
                   className={
@@ -124,7 +162,7 @@ export default function CardTable({ posts },{ color }) {
                       : "bg-blueGray-600 text-blueGray-200 border-blueGray-500")
                   }
                 >
-                  Description
+                  Users
                 </th>
                 <th
                   className={
@@ -134,7 +172,7 @@ export default function CardTable({ posts },{ color }) {
                       : "bg-blueGray-600 text-blueGray-200 border-blueGray-500")
                   }
                 >
-                  Completed By
+                  Completion
                 </th>
                 <th
                   className={

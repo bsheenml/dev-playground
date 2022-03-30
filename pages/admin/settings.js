@@ -4,6 +4,7 @@ import React from "react";
 
 import CardSettings from "components/Cards/CardSettings.js";
 import CardProfile from "components/Cards/CardProfile.js";
+import AdminNoNav from "layouts/AdminNoNav";
 
 // layout for page
 
@@ -24,4 +25,4 @@ export default function Settings() {
   );
 }
 
-Settings.layout = Admin;
+Settings.layout = AdminNoNav;

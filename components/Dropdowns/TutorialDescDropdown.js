@@ -2,7 +2,8 @@ import React from "react";
 import Link from "next/link";
 import { createPopper } from "@popperjs/core";
 
-const PagesDropdown = () => {
+const TutorialDescDropdown = ({posts}) => {
+  const resultArr = posts.results
   // dropdown props
   const [dropdownPopoverShow, setDropdownPopoverShow] = React.useState(false);
   const btnDropdownRef = React.createRef();
@@ -19,7 +20,7 @@ const PagesDropdown = () => {
   return (
     <>
       <a
-        className="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+        className="lg:text-cyan-500 lg:hover:text-cyan-500 text-cyan-500 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
         href="#pablo"
         ref={btnDropdownRef}
         onClick={(e) => {
@@ -27,7 +28,7 @@ const PagesDropdown = () => {
           dropdownPopoverShow ? closeDropdownPopover() : openDropdownPopover();
         }}
       >
-        Tutorial Categories
+        View Description
       </a>
       <div
         ref={popoverDropdownRef}
@@ -41,7 +42,7 @@ const PagesDropdown = () => {
             "text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"
           }
         >
-          Frontend
+          {resultArr.values.tutorial_description}
         </span>
         <Link href="/admin/dashboard">
           <a
@@ -144,4 +145,4 @@ const PagesDropdown = () => {
   );
 };
 
-export default PagesDropdown;
+export default TutorialDescDropdown;

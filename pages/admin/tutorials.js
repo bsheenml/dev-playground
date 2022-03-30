@@ -8,7 +8,7 @@ import CardTableDark from "components/Cards/CardTableDark.js";
 
 // layout for page
 
-import Admin from "layouts/Admin.js";
+import Admin4 from "layouts/Admin4";
 
 
 export default function TablesDash({posts},{color}) {
@@ -42,6 +42,6 @@ export const getServerSideProps = async () => {
   };
 };
 
-TablesDash.layout = Admin;
+TablesDash.layout = Admin4;
 
-TablesDash.layout = Admin;
+TablesDash.layout = Admin4;

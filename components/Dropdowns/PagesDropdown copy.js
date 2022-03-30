@@ -27,7 +27,7 @@ const PagesDropdown = () => {
           dropdownPopoverShow ? closeDropdownPopover() : openDropdownPopover();
         }}
       >
-        Tutorial Categories
+        Demo Pages
       </a>
       <div
         ref={popoverDropdownRef}
@@ -41,7 +41,7 @@ const PagesDropdown = () => {
             "text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"
           }
         >
-          Frontend
+          Admin Layout
         </span>
         <Link href="/admin/dashboard">
           <a
@@ -50,7 +50,7 @@ const PagesDropdown = () => {
               "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
             }
           >
-            HTML/CSS
+            Dashboard
           </a>
         </Link>
         <Link href="/admin/settings">
@@ -60,7 +60,7 @@ const PagesDropdown = () => {
               "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
             }
           >
-            JavaScript Tips + Tricks
+            Settings
           </a>
         </Link>
         <Link href="/admin/tables">
@@ -70,7 +70,7 @@ const PagesDropdown = () => {
               "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
             }
           >
-            React
+            Tables
           </a>
         </Link>
         <Link href="/admin/maps">
@@ -80,7 +80,7 @@ const PagesDropdown = () => {
               "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
             }
           >
-            NextJS
+            Maps
           </a>
         </Link>
         <div className="h-0 mx-4 my-2 border border-solid border-blueGray-100" />
@@ -89,7 +89,7 @@ const PagesDropdown = () => {
             "text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"
           }
         >
-          Backend
+          Auth Layout
         </span>
         <Link href="/auth/login">
           <a
@@ -98,7 +98,7 @@ const PagesDropdown = () => {
               "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
             }
           >
-            
+            Login
           </a>
         </Link>
         <Link href="/auth/register">

@@ -10,17 +10,18 @@ import CardTableDark from "components/Cards/CardTableDark.js";
 
 import Admin from "layouts/Admin.js";
 
-
-export default function TablesDash({posts},{color}) {
-
+export default function Tables({posts},{color}) {
+  const resultArr = posts.results;
+  JSON.stringify(posts);
+  console.log(posts);
   return (
     <>
       <div className="flex flex-wrap mt-4">
         <div className="w-full mb-12 px-4">
-          <CardTableDark posts={posts} color="dark"/>
+          <CardTable posts={posts} color="light"/>
         </div>
         <div className="w-full mb-12 px-4">
-          <CardTable posts={posts} color="light" />
+          <CardTableDark posts={posts} color="dark" />
         </div>
       </div>
     </>
@@ -42,6 +43,6 @@ export const getServerSideProps = async () => {
   };
 };
 
-TablesDash.layout = Admin;
+Tables.layout = Admin;
 
-TablesDash.layout = Admin;
+Tables.layout = Admin;

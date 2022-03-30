@@ -3,24 +3,24 @@ import Axios from 'axios'
 
 // components
 
-import CardTable from "components/Cards/CardTable.js";
-import CardTableDark from "components/Cards/CardTableDark.js";
+import CardTableDarkTechnologies from "components/Cards/CardTableDarkTechnologies";
 
 // layout for page
 
 import Admin from "layouts/Admin.js";
 
-
-export default function TablesDash({posts},{color}) {
-
+export default function Tables({posts}) {
+  const resultArr = posts.results;
+  JSON.stringify(posts);
+  console.log(posts);
   return (
     <>
       <div className="flex flex-wrap mt-4">
         <div className="w-full mb-12 px-4">
-          <CardTableDark posts={posts} color="dark"/>
+          <CardTableDarkTechnologies posts={posts}/>
         </div>
         <div className="w-full mb-12 px-4">
-          <CardTable posts={posts} color="light" />
+          <CardTableDarkTechnologies posts={posts} color="dark" />
         </div>
       </div>
     </>
@@ -42,6 +42,6 @@ export const getServerSideProps = async () => {
   };
 };
 
-TablesDash.layout = Admin;
+Tables.layout = Admin;
 
-TablesDash.layout = Admin;
+Tables.layout = Admin;

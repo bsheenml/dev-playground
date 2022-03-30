@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 // components
 
 import TableDropdown from "components/Dropdowns/TableDropdown.js";
+import TestDrop from "components/Dropdowns/TestDrop";
 
 function convertUnixTime(unix) {
   let a = new Date(unix * 1000),
@@ -17,17 +18,17 @@ function convertUnixTime(unix) {
   return `${month} ${date}, ${year}, ${hour}:${min}:${sec}`;
 }
 
-export default function CardTable({ posts },{ color }) {
+export default function CardTableDark({ posts },{ color }) {
   const resultArr = posts.results;
-  color = 'light'
+  color = 'dark'
   console.log(posts);
-  const Rows = resultArr.slice(10,20).map((d) => {
+  const Rows = resultArr.slice(0,10).map((d) => {
     return (
 
       <tr>
         <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
           <img
-            src={d.values.tutorial_provider_logo}
+            src="/img/logrocket.png"
             className="h-8 w-8 bg-white rounded-full border"
             alt="..."
           ></img>{" "}
@@ -47,7 +48,7 @@ export default function CardTable({ posts },{ color }) {
           <i className="fas fa-circle text-orange-500 mr-2"></i> {new Date(d.values.tutorial_publish_date).toLocaleDateString("en-US")}
         </td>
         <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
-          aaa
+          <TestDrop></TestDrop>
         </td>
         
 
@@ -76,7 +77,7 @@ export default function CardTable({ posts },{ color }) {
                   (color === "light" ? "text-blueGray-700" : "text-white")
                 }
               >
-                Popular Tutorials
+                Recent tutorials
               </h3>
             </div>
           </div>
@@ -156,10 +157,10 @@ export default function CardTable({ posts },{ color }) {
   );
 }
 
-CardTable.defaultProps = {
+CardTableDark.defaultProps = {
   color: "light",
 };
 
-CardTable.propTypes = {
+CardTableDark.propTypes = {
   color: PropTypes.oneOf(["light", "dark"]),
 };

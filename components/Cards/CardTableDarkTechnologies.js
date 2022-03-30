@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 // components
 
 import TableDropdown from "components/Dropdowns/TableDropdown.js";
+import TestDrop from "components/Dropdowns/TestDrop";
 
 function convertUnixTime(unix) {
   let a = new Date(unix * 1000),
@@ -17,11 +18,11 @@ function convertUnixTime(unix) {
   return `${month} ${date}, ${year}, ${hour}:${min}:${sec}`;
 }
 
-export default function CardTable({ posts },{ color }) {
+export default function CardTableDarkTechnologies({ posts },{ color }) {
   const resultArr = posts.results;
-  color = 'light'
+  color = 'dark'
   console.log(posts);
-  const Rows = resultArr.slice(10,20).map((d) => {
+  const Rows = resultArr.slice(0,10).map((d) => {
     return (
 
       <tr>
@@ -47,7 +48,7 @@ export default function CardTable({ posts },{ color }) {
           <i className="fas fa-circle text-orange-500 mr-2"></i> {new Date(d.values.tutorial_publish_date).toLocaleDateString("en-US")}
         </td>
         <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
-          aaa
+          <TestDrop></TestDrop>
         </td>
         
 
@@ -76,8 +77,17 @@ export default function CardTable({ posts },{ color }) {
                   (color === "light" ? "text-blueGray-700" : "text-white")
                 }
               >
-                Popular Tutorials
+                Front End Development
+                  <div className="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
+                    <button
+                      className="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                      type="button"
+                      >
+                      See all
+                    </button>
+                  </div>
               </h3>
+              
             </div>
           </div>
         </div>
@@ -94,7 +104,7 @@ export default function CardTable({ posts },{ color }) {
                       : "bg-blueGray-600 text-blueGray-200 border-blueGray-500")
                   }
                 >
-                  Title
+                  Backend Development
                 </th>
                 <th
                   className={
@@ -104,7 +114,7 @@ export default function CardTable({ posts },{ color }) {
                       : "bg-blueGray-600 text-blueGray-200 border-blueGray-500")
                   }
                 >
-                  Provider
+                  Machine Learning and AI
                 </th>
                 <th
                   className={
@@ -114,7 +124,7 @@ export default function CardTable({ posts },{ color }) {
                       : "bg-blueGray-600 text-blueGray-200 border-blueGray-500")
                   }
                 >
-                  Publish Date
+                  Inbound
                 </th>
                 <th
                   className={
@@ -156,10 +166,10 @@ export default function CardTable({ posts },{ color }) {
   );
 }
 
-CardTable.defaultProps = {
+CardTableDarkTechnologies.defaultProps = {
   color: "light",
 };
 
-CardTable.propTypes = {
+CardTableDarkTechnologies.propTypes = {
   color: PropTypes.oneOf(["light", "dark"]),
 };

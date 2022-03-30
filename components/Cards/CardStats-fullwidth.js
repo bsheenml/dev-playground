@@ -15,14 +15,14 @@ export default function CardStats({
   return (
     <>
       <div className="relative flex flex-col min-w-full break-words bg-white rounded mb-6 xl:mb-0 shadow-lg">
-        <div className="flex-auto p-2">
+        <div className="flex-auto p-4">
           <div className="flex flex-wrap">
             <div className="relative w-full pr-4 max-w-full flex-grow flex-1">
-              <h5 className="text-blueGray-500 uppercase pb-4 font-bold text-s">
-                Under Development!
+              <h5 className="text-blueGray-400 uppercase font-bold text-xs">
+                {statSubtitle}
               </h5>
-              <span className="pt-6 text-l ptext-blueGray-700">
-                See you soon!
+              <span className="font-semibold text-xl text-blueGray-700">
+                {statTitle}
               </span>
             </div>
             <div className="relative w-auto pl-4 flex-initial">

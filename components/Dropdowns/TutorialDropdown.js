@@ -18,8 +18,14 @@ const PagesDropdown = () => {
   };
   return (
     <>
+      
+      <button
+        className="bg-white text-blueGray-700 active:bg-blueGray-700 mt-5 text-xs font-bold uppercase px-0 py-0 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-1 ml-3 mb-3 ease-linear transition-all duration-150"
+        type="button"
+      >
+        
       <a
-        className="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+        className="lg:text-blueGray-700 lg:hover:text-blueGray-700 text-blueGray-700 px-3 py-4s lg:py-2 flex items-center text-xs uppercase font-bold"
         href="#pablo"
         ref={btnDropdownRef}
         onClick={(e) => {
@@ -27,7 +33,7 @@ const PagesDropdown = () => {
           dropdownPopoverShow ? closeDropdownPopover() : openDropdownPopover();
         }}
       >
-        Tutorial Categories
+        View By topic
       </a>
       <div
         ref={popoverDropdownRef}
@@ -36,6 +42,7 @@ const PagesDropdown = () => {
           "bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
         }
       >
+        
         <span
           className={
             "text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"
@@ -108,7 +115,7 @@ const PagesDropdown = () => {
               "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
             }
           >
-            Register
+          Node
           </a>
         </Link>
         <div className="h-0 mx-4 my-2 border border-solid border-blueGray-100" />
@@ -117,7 +124,7 @@ const PagesDropdown = () => {
             "text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"
           }
         >
-          No Layout
+          Data
         </span>
         <Link href="/landing">
           <a
@@ -126,7 +133,7 @@ const PagesDropdown = () => {
               "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
             }
           >
-            Landing
+            Databases
           </a>
         </Link>
         <Link href="/profile">
@@ -136,10 +143,12 @@ const PagesDropdown = () => {
               "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
             }
           >
-            Profile
+            API's
           </a>
         </Link>
+        
       </div>
+      </button>
     </>
   );
 };

@@ -1,6 +1,7 @@
 import React from "react";
+import TestDrop from "components/Dropdowns/TestDrop";
 
-// components import quote? https://zenquotes.io/api/random
+// components
 
 import CardStats from "components/Cards/CardStats.js";
 
@@ -15,8 +16,8 @@ export default function HeaderStats() {
             <div className="flex flex-wrap">
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <CardStats
-                  statSubtitle="TRAFFIC"
-                  statTitle="350,897"
+                  statSubtitle="By Category"
+                  statTitle="{<TestDrop></TestDrop>}"
                   statArrow="up"
                   statPercent="3.48"
                   statPercentColor="text-emerald-500"
@@ -24,10 +25,12 @@ export default function HeaderStats() {
                   statIconName="far fa-chart-bar"
                   statIconColor="bg-red-500"
                 />
+                <div><TestDrop></TestDrop></div>
+                
               </div>
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <CardStats
-                  statSubtitle="NEW USERS"
+                  statSubtitle="Most Popular"
                   statTitle="2,356"
                   statArrow="down"
                   statPercent="3.48"
@@ -39,7 +42,7 @@ export default function HeaderStats() {
               </div>
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <CardStats
-                  statSubtitle="SALES"
+                  statSubtitle="Most Recent"
                   statTitle="924"
                   statArrow="down"
                   statPercent="1.10"
@@ -51,7 +54,7 @@ export default function HeaderStats() {
               </div>
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <CardStats
-                  statSubtitle="PERFORMANCE"
+                  statSubtitle="Most Completed"
                   statTitle="49,65%"
                   statArrow="up"
                   statPercent="12"
