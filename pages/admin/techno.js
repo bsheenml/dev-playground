@@ -1,37 +1,47 @@
 import React from "react";
+import Axios from 'axios'
 
 // components
 
-import CardLineChart from "components/Cards/CardLineChart.js";
-import CardBarChart from "components/Cards/CardBarChart.js";
-import CardPageVisits from "components/Cards/CardPageVisits.js";
-import CardSocialTraffic from "components/Cards/CardSocialTraffic.js";
+import CardTable from "components/Cards/CardTable.js";
+import CardTableDark from "components/Cards/CardTableDark.js";
 
 // layout for page
 
 import Admin from "layouts/Admin.js";
 
-export default function Dashboard() {
+
+export default function TablesDash({posts},{color}) {
+
   return (
     <>
-      <div className="flex flex-wrap">
-        <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
-          <CardLineChart />
-        </div>
-        <div className="w-full xl:w-4/12 px-4">
-          <CardBarChart />
-        </div>
-      </div>
       <div className="flex flex-wrap mt-4">
-        <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
-          <CardPageVisits />
+        <div className="w-full mb-12 px-4">
+          <CardTableDark posts={posts} color="dark"/>
         </div>
-        <div className="w-full xl:w-4/12 px-4">
-          <CardSocialTraffic />
+        <div className="w-full mb-12 px-4">
+          <CardTable posts={posts} color="light" />
         </div>
       </div>
     </>
   );
 }
 
-Dashboard.layout = Admin;
+export const getServerSideProps = async () => {
+  const res = await Axios.get(`https://api.hubapi.com/cms/v3/hubdb/tables/5360731/rows?hapikey=${process.env.API_KEY}`);
+  const posts = await res.data;
+  const post = posts.total;
+  JSON.stringify(posts);
+  console.log(posts);
+  console.log(post);
+
+  return {
+    props: {
+      posts,
+    },
+  };
+};
+
+TablesDash.layout = Admin;
+
+TablesDash.layout = Admin;

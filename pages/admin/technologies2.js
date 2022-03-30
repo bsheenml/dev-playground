@@ -11,7 +11,7 @@ import CardTableDark from "components/Cards/CardTableDark.js";
 import Admin from "layouts/Admin.js";
 
 
-export default function Tables({posts},{color}) {
+export default function Technologies2({posts},{color}) {
   const resultArr = posts.results;
   JSON.stringify(posts);
   console.log(posts);
@@ -44,6 +44,6 @@ export const getServerSideProps = async () => {
   };
 };
 
-Tables.layout = Admin;
+Technologies2.layout = Admin;
 
-Tables.layout = Admin;
+
