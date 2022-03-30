@@ -41,7 +41,7 @@ export default function Navbar(props) {
                   href="#"
                 >
                   <i className="lg:text-blueGray-200 text-blueGray-400 far fa-file-alt text-lg leading-lg mr-2" />{" "}
-                  <TutorialDropdown/>
+                  aa
                 </a>
               </li>
             </ul>
